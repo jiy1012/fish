@@ -7,6 +7,14 @@ build: fmt
 	go build -o hall_server hall/main/main.go hall/main/init.go hall/main/config.go
 	go build -o fish_server game/main/main.go game/main/init.go game/main/config.go
 
+clean:
+	rm accout_server
+	rm fish_server
+	rm hall_server
+	rm run-accout_server.log
+	rm run-fish_server.log
+	rm run-hall_server.log
+
 run:
 	./accout_server >> ./run-accout_server.log 2>&1 &
 	./hall_server >> ./run-hall_server.log 2>&1 &
