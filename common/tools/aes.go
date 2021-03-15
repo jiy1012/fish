@@ -3,16 +3,16 @@ package tools
 import (
 	"crypto/aes"
 	"crypto/cipher"
-	"fmt"
 	"encoding/hex"
+	"fmt"
 )
 
-func NewAesTool(appSecret string) (aesTool *AesEncrypt,err error) {
-	if len(appSecret) <16 {
-		err = fmt.Errorf("invalid param appsecret of %s",appSecret)
+func NewAesTool(appSecret string) (aesTool *AesEncrypt, err error) {
+	if len(appSecret) < 16 {
+		err = fmt.Errorf("invalid param appsecret of %s", appSecret)
 		return
 	}
-	aesTool = &AesEncrypt{AppSecret:appSecret}
+	aesTool = &AesEncrypt{AppSecret: appSecret}
 	return
 }
 
@@ -50,7 +50,7 @@ func (p *AesEncrypt) Encrypt(strMesg string) (string, error) {
 	}
 	aesEncrypter := cipher.NewCFBEncrypter(aesBlockEncrypter, iv)
 	aesEncrypter.XORKeyStream(encrypted, []byte(strMesg))
-	encodeString := fmt.Sprintf("%x",encrypted)
+	encodeString := fmt.Sprintf("%x", encrypted)
 	//encodeString := base64.StdEncoding.EncodeToString([]byte(encrypted))
 	return encodeString, nil
 }

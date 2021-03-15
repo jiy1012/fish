@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func init()  {
+func init() {
 	http.HandleFunc("/get_server_info", controllers.GetServerInfo)
 
 	http.HandleFunc("/create_room", controllers.CreateRoom)
@@ -15,5 +15,5 @@ func init()  {
 	http.HandleFunc("/ping", controllers.Ping)
 	http.HandleFunc("/is_room_running", controllers.IsRoomRunning)
 	http.HandleFunc("/enter_public_room", controllers.EnterPublicRoom)
-	http.HandleFunc("/socket.io/",service.ServeWs)
+	http.HandleFunc("/socket.io/", service.ServeWs)
 }

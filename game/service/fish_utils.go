@@ -184,7 +184,7 @@ func BuildFishArray() (ret *FishArrayRet) {
 	var fishId FishId
 	var generateFishId = func() FishId {
 		fishId++
-		return 	fishId
+		return fishId
 	}
 	var fishArray = make([][]*ArrayFish, 0)
 	var duration = 0
@@ -240,13 +240,13 @@ func BuildFishArray() (ret *FishArrayRet) {
 		kind := 1
 		for i := 1; i <= 30; i++ {
 			kind = ((i-1)/10 + 1) * 5
-			fishArray[0] = append(fishArray[0],&ArrayFish{
+			fishArray[0] = append(fishArray[0], &ArrayFish{
 				FishKind:  kind,
 				TraceKind: 0,
 				FishId:    generateFishId(),
 				Speed:     0,
 			})
-			fishArray[1] = append(fishArray[1],&ArrayFish{
+			fishArray[1] = append(fishArray[1], &ArrayFish{
 				FishKind:  kind,
 				TraceKind: 0,
 				FishId:    generateFishId(),

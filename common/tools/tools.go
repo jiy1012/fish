@@ -3,8 +3,8 @@ package tools
 import (
 	"crypto/md5"
 	"fmt"
-	"time"
 	"io"
+	"time"
 )
 
 func CreateUid() (uuid string) {

@@ -42,9 +42,9 @@ func initConf() (err error) {
 		return
 	}
 
-	conf,err := config.NewConfig("ini","./common/conf/game.conf")
+	conf, err := config.NewConfig("ini", "./common/conf/game.conf")
 	if err != nil {
-		fmt.Println("new config failed,err:",err)
+		fmt.Println("new config failed,err:", err)
 		return
 	}
 
@@ -53,7 +53,7 @@ func initConf() (err error) {
 		return fmt.Errorf("conf err: game_host is null")
 	}
 
-	common.GameConf.GamePort,err = conf.Int("game_port")
+	common.GameConf.GamePort, err = conf.Int("game_port")
 	if err != nil {
 		return
 	}

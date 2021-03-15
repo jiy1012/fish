@@ -30,7 +30,7 @@ type Node struct {
 
 func GenerateUid(nodeNum int64) (err error, generateChan <-chan int64) {
 	var node *Node
-	if node, err = NewNode(nodeNum);err == nil {
+	if node, err = NewNode(nodeNum); err == nil {
 		generateChan = node.GenerateChan
 		go node.run()
 		return

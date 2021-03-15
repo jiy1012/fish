@@ -55,7 +55,7 @@ func initConf() (err error) {
 
 	common.HallConf.AccountPort, err = accountConf.Int("account_port")
 	if err != nil {
-		return  fmt.Errorf("conf err: account_port is null")
+		return fmt.Errorf("conf err: account_port is null")
 	}
 
 	common.HallConf.AppId, err = conf.Int("app_id")

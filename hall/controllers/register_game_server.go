@@ -12,6 +12,7 @@ import (
 
 var lock = sync.Mutex{}
 var serverInfo = make(map[string]int)
+
 //todo 优化的空间：可以加个注销服务接口。心跳加入时间，长时间未发送心跳的游戏服务器由大厅发起询问或暂时挂起。懒得做 :(
 
 func RegisterGameServer(w http.ResponseWriter, r *http.Request) {

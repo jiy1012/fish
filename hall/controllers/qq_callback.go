@@ -17,26 +17,26 @@ import (
 )
 
 type qqUserInfo struct {
-	Ret                int `json:"ret"`
-	Msg                string `json:"msg"`
-	IsLost            int `json:"is_lost"`
-	Nickname           string `json:"nickname"`
-	Gender             string `json:"gender"`
-	Province           string `json:"province"`
-	City               string `json:"city"`
-	Year               string `json:"year"`
-	Constellation      string `json:"constellation"`
-	FigureUrl          string `json:"figureurl"`
-	FigureUrl1        string `json:"figureurl_1"`
-	FigureUrl2        string `json:"figureurl_2"`
-	FigureUrlQQ1     string `json:"figureurl_qq_1"`
-	FigureUrlQQ2     string `json:"figureurl_qq_2"`
-	FigureUrlQQ       string `json:"figureurl_qq"`
-	FigureUrlType     string `json:"figureurl_type"`
-	IsYellowVip      string `json:"is_yellow_vip"`
-	Vip                string `json:"vip"`
-	YellowVipLevel   string `json:"yellow_vip_level"`
-	Level              string `json:"level"`
+	Ret             int    `json:"ret"`
+	Msg             string `json:"msg"`
+	IsLost          int    `json:"is_lost"`
+	Nickname        string `json:"nickname"`
+	Gender          string `json:"gender"`
+	Province        string `json:"province"`
+	City            string `json:"city"`
+	Year            string `json:"year"`
+	Constellation   string `json:"constellation"`
+	FigureUrl       string `json:"figureurl"`
+	FigureUrl1      string `json:"figureurl_1"`
+	FigureUrl2      string `json:"figureurl_2"`
+	FigureUrlQQ1    string `json:"figureurl_qq_1"`
+	FigureUrlQQ2    string `json:"figureurl_qq_2"`
+	FigureUrlQQ     string `json:"figureurl_qq"`
+	FigureUrlType   string `json:"figureurl_type"`
+	IsYellowVip     string `json:"is_yellow_vip"`
+	Vip             string `json:"vip"`
+	YellowVipLevel  string `json:"yellow_vip_level"`
+	Level           string `json:"level"`
 	IsYellowYearVip string `json:"is_yellow_year_vip"`
 }
 
@@ -48,7 +48,7 @@ func QQCallback(w http.ResponseWriter, r *http.Request) {
 	}()
 	var sign string
 	defer func() {
-		var script = fmt.Sprintf(`<script>localStorage.setItem("sign","%s");location.href="/"</script>`,sign)
+		var script = fmt.Sprintf(`<script>localStorage.setItem("sign","%s");location.href="/"</script>`, sign)
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		if _, err := w.Write([]byte(script)); err != nil {
 			logs.Error("QQCallback err: %v", err)

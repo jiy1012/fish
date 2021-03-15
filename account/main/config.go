@@ -22,7 +22,7 @@ func initConf() (err error) {
 	if common.AccountConf.AccountAesKey == "" || len(common.AccountConf.AccountAesKey) < 16 {
 		return fmt.Errorf("conf err: invalid account_aes_key :%v", common.AccountConf.AccountAesKey)
 	}
-	logs.Debug("account_aes_key :%v",common.AccountConf.AccountAesKey)
+	logs.Debug("account_aes_key :%v", common.AccountConf.AccountAesKey)
 
 	common.AccountConf.LogPath = conf.String("log_path")
 	if common.AccountConf.LogPath == "" {

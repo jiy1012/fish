@@ -14,7 +14,7 @@ type HallServiceConf struct {
 	LogLevel    string
 	Version     string
 
-	AppId       int		//qq登录
+	AppId       int //qq登录
 	AppKey      string
 	RedirectUri string
 }

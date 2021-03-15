@@ -7,9 +7,9 @@ import (
 	"net"
 )
 
-func GetRpcClient(host,port string) (client *rpc.UserServiceClient, closeTransport func() error, err error) {
+func GetRpcClient(host, port string) (client *rpc.UserServiceClient, closeTransport func() error, err error) {
 	var transport thrift.TTransport
-	transport, err = thrift.NewTSocket(net.JoinHostPort(host,port))
+	transport, err = thrift.NewTSocket(net.JoinHostPort(host, port))
 	if err != nil {
 		err = fmt.Errorf("NewTSocket failed. err: [%v]\n", err)
 		return

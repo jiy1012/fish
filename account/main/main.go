@@ -12,19 +12,19 @@ import (
 func main() {
 	err := initConf()
 	if err != nil {
-		logs.Error("init conf err:%v",err)
+		logs.Error("init conf err:%v", err)
 		return
 	}
 	logs.Debug("init conf success")
 	service.InitAesTool()
 	err = initSec()
 	if err != nil {
-		logs.Error("initSec err:%v",err)
+		logs.Error("initSec err:%v", err)
 		return
 	}
 	logs.Debug("init sec success")
 
-	port := fmt.Sprintf(":%d",common.AccountConf.ThriftPort)
+	port := fmt.Sprintf(":%d", common.AccountConf.ThriftPort)
 	transport, err := thrift.NewTServerSocket(port)
 	if err != nil {
 		panic(err)
@@ -41,7 +41,7 @@ func main() {
 		transportFactory,
 		protocolFactory,
 	)
-	logs.Debug("account server %s",port)
+	logs.Debug("account server %s", port)
 	if err := server.Serve(); err != nil {
 		panic(err)
 	}

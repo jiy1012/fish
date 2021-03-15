@@ -229,7 +229,7 @@ func ServeWs(w http.ResponseWriter, r *http.Request) {
 		logs.Error("new client send msg err : %v", err)
 	} else {
 		client.sendMsg(append([]byte{'0'}, msg...))
-		client.sendMsg(append([]byte{'4', '0'}, ))
+		client.sendMsg(append([]byte{'4', '0'}))
 	}
 }
 

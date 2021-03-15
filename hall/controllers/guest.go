@@ -25,7 +25,7 @@ func Guest(w http.ResponseWriter, r *http.Request) {
 	if len(sign) == 0 || sign == "null" {
 		qqLoginUrl := fmt.Sprintf("https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=%d&redirect_uri=%s&state=1", appId, redirectUri)
 		ret := map[string]interface{}{
-			"errcode": 1,
+			"errcode":    1,
 			"qqLoginUrl": qqLoginUrl,
 		}
 		w.Header().Set("Access-Control-Allow-Origin", "*")

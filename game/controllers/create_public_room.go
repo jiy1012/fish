@@ -24,7 +24,7 @@ func CreatePublicRoom(w http.ResponseWriter, r *http.Request) {
 		}
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		if _, err := w.Write(data); err != nil {
-			logs.Error("CreateRoom err: %v",err)
+			logs.Error("CreateRoom err: %v", err)
 		}
 	}()
 }

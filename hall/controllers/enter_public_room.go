@@ -14,11 +14,11 @@ func EnterPublicRoom(w http.ResponseWriter, r *http.Request) {
 	defer lock.Unlock()
 	minLoad := 0
 	gameUrl := ""
-	for serverUrl,load := range serverInfo{
+	for serverUrl, load := range serverInfo {
 		if minLoad == 0 {
-			 minLoad = load
-			 gameUrl = serverUrl
-		}else{
+			minLoad = load
+			gameUrl = serverUrl
+		} else {
 			if load <= minLoad {
 				minLoad = load
 				gameUrl = serverUrl

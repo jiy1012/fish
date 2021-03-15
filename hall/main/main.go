@@ -23,7 +23,7 @@ func main() {
 	}
 
 	var addr = flag.String("addr", fmt.Sprintf(":%d", common.HallConf.HallPort), "http service address")
-	logs.Debug("hall server listen port %v",*addr)
+	logs.Debug("hall server listen port %v", *addr)
 	err = http.ListenAndServe(*addr, nil)
 	if err != nil {
 		logs.Error("ListenAndServe err: %v", err)
